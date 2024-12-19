@@ -1,0 +1,18 @@
+[package]
+name = "advent_2024"
+version = "0.1.0"
+authors = ["James R. Grant"]
+description = "Rust implementation of coding challenges."
+repository = "https://github.com/JamesRGrant/advent_2024"
+readme = "README.md"
+license = "MIT"
+keywords = ["Advent of Code"]
+categories = ["rust-patterns"]
+edition = "2021"
+
+#[dependencies]
+#petgraph = "0.6.4"
+
+# This is for profiling, remove if not using
+[profile.release]
+#debug = true
