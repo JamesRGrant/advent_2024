@@ -16,9 +16,7 @@ impl Solve for Problem {
 }
 impl Problem {
     pub fn new(data: &[String]) -> Self {
-        Problem {
-            data: data.to_vec(),
-        }
+        Problem { data: data.to_vec() }
     }
 }
 
@@ -30,14 +28,14 @@ mod test {
     #[test]
     fn p1() {
         let start = std::time::Instant::now();
-        assert_eq!(Problem::new(&load_file("input\\_test.txt")).p1(), 0);
+        assert_eq!(Problem::new(&load_file("input/_test.txt")).p1(), 0);
         println!("P1 elapsed time:    {:>10?}", start.elapsed());
     }
 
     #[test]
     fn p2() {
         let start = std::time::Instant::now();
-        assert_eq!(Problem::new(&load_file("input\\_test.txt")).p2(), 0);
+        assert_eq!(Problem::new(&load_file("input/_test.txt")).p2(), 0);
         println!("P2 elapsed time:    {:>10?}", start.elapsed());
     }
 }
