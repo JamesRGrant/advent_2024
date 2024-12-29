@@ -22,7 +22,7 @@ impl Solve for Problem {
         sum
     }
 
-    /// Same, but don't() turns off and do() turns back on
+    /// Same, but ``don't()`` turns off and ``do()`` turns back on
     fn p2(&mut self) -> i64 {
         let mut sum = 0;
         let mut enabled = true;

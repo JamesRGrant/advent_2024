@@ -20,9 +20,9 @@ impl Solve for Problem {
         let mut safe = 0;
         'outer: for row in &self.data {
             for i in 0..row.len() {
-                let mut subrow = row.clone();
-                subrow.remove(i);
-                if is_safe(&subrow) {
+                let mut sub_row = row.clone();
+                sub_row.remove(i);
+                if is_safe(&sub_row) {
                     safe += 1;
                     continue 'outer;
                 }
