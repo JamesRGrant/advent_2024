@@ -13,11 +13,11 @@ trait Solve {
 
 fn main() {
     let start = std::time::Instant::now();
-    for day in 1..=9 {
+    for day in 1..=10 {
         // Production data is: input/01.txt
         run_problem(day, &format!("input/{:0>2}.txt", day.to_string()));
     }
-    println!("Total elapsed time:    {:>10?}", start.elapsed());
+    println!("Total elapsed time:    {:>9.3?}", start.elapsed());
 }
 
 fn run_problem(day: i32, filename: &str) {
@@ -35,7 +35,7 @@ fn run_problem(day: i32, filename: &str) {
         7 => Box::new(solutions::day07::Problem::new(&data)),
         8 => Box::new(solutions::day08::Problem::new(&data)),
         9 => Box::new(solutions::day09::Problem::new(&data)),
-        // 10 => Box::new(solutions::day10::Problem::new(&data)),
+        10 => Box::new(solutions::day10::Problem::new(&data)),
         // 11 => Box::new(solutions::day11::Problem::new(&data)),
         // 12 => Box::new(solutions::day12::Problem::new(&data)),
         // 13 => Box::new(solutions::day13::Problem::new(&data)),
@@ -53,13 +53,13 @@ fn run_problem(day: i32, filename: &str) {
         // _ => Box::new(solutions::day25::Problem::new(&data)),
         _ => panic!("Day {day} not implemented"),
     };
-    println!("{day:0>2}: load/parse      in {:>10?}", now.elapsed());
+    println!("{day:0>2}: load/parse      in {:>9.3?}", now.elapsed());
 
     // Solve each part for the day
     now = std::time::Instant::now();
-    println!(" 1: {:15} in {:>10?}", s.p1(), now.elapsed());
+    println!(" 1: {:15} in {:>9.3?}", s.p1(), now.elapsed());
     now = std::time::Instant::now();
-    println!(" 2: {:15} in {:>10?}", s.p2(), now.elapsed());
+    println!(" 2: {:15} in {:>9.3?}", s.p2(), now.elapsed());
 }
 
 /// Read a file into a vector of Strings

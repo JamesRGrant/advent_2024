@@ -81,7 +81,6 @@ impl Solve for Problem {
                 let file_idx = available_files.remove(0);
                 for _ in 0..self.data[file_idx] {
                     checksum += i * file_idx as i64;
-                    // println!(" {i} * {file_idx} = {checksum}");
                     i += 1;
                 }
             } else {
@@ -92,28 +91,24 @@ impl Solve for Problem {
             // spaces: try to fit any future file
             let mut found = false;
             let mut dec = self.spaces[space_index];
-            // println!("  Filling {dec} spaces");
             while dec > 0 {
                 for j in (0..self.data.len()).rev() {
                     // println!("  Looking at {j}");
                     if self.data[j] <= dec && available_files.contains(&j) {
                         found = true;
                         let file_idx = available_files.remove(available_files.iter().position(|&x| x == j).unwrap());
-                        // println!("  Found {j} with {file_idx}");
+
                         for _ in 0..self.data[file_idx] {
                             dec -= 1;
                             checksum += i * j as i64;
-                            // println!(" {i} * {j} = {checksum}");
                             i += 1;
                         }
                         break;
                     }
                 }
-                // println!("  {dec} spaces left, found = {found}, {:?}", available_files);
                 if found {
                     found = false;
                 } else {
-                    // println!("  Exiting at {dec} spaces");
                     break;
                 }
             }
