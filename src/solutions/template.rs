@@ -1,4 +1,6 @@
 use crate::Solve;
+#[allow(dead_code)]
+const ANSWERS: [i64; 4] = [0, 0, 0, 0];
 
 pub struct Problem {
     data: Vec<String>,
@@ -27,15 +29,20 @@ mod test {
 
     #[test]
     fn p1() {
-        let start = std::time::Instant::now();
-        assert_eq!(Problem::new(&load_file("input/_test.txt")).p1(), 0);
-        println!("P1 elapsed time:    {:>10?}", start.elapsed());
+        assert_eq!(Problem::new(&load_file("input/_test.txt")).p1(), ANSWERS[0]);
     }
 
     #[test]
     fn p2() {
-        let start = std::time::Instant::now();
-        assert_eq!(Problem::new(&load_file("input/_test.txt")).p2(), 0);
-        println!("P2 elapsed time:    {:>10?}", start.elapsed());
+        assert_eq!(Problem::new(&load_file("input/_test.txt")).p2(), ANSWERS[1]);
+    }
+    #[test]
+    fn f1() {
+        assert_eq!(Problem::new(&load_file("input/.txt")).p1(), ANSWERS[0]);
+    }
+
+    #[test]
+    fn f2() {
+        assert_eq!(Problem::new(&load_file("input/.txt")).p2(), ANSWERS[1]);
     }
 }

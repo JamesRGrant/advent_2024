@@ -122,48 +122,6 @@ impl Problem {
                 }
             }
 
-            // let mut i = 0;
-            // while i < self.data.len() {
-            //     let str = format!("{}", self.data[i]);
-            //     if self.data[i] == 0 {
-            //         // Puzzle rule: 0 becomes 1
-            //         singles_new[1] += 1;
-            //         self.data.remove(i);
-            //     } else if self.data[i] < 10 {
-            //         // Single digit - move to singles array
-            //         singles_new[self.data[i] as usize] += 1;
-            //         self.data.remove(i);
-            //     } else if str.len() == 2 {
-            //         // 2 digit - move to singles array
-            //         let (l, r) = str.split_at(str.len() / 2);
-            //         singles_new[l.parse::<usize>().unwrap()] += 1;
-            //         singles_new[r.parse::<usize>().unwrap()] += 1;
-            //         self.data.remove(i);
-            //     } else if str.len() % 2 == 0 {
-            //         let (l, r) = str.split_at(str.len() / 2);
-
-            //         // left should always be a big number, so overwrite
-            //         self.data[i] = l.parse().unwrap();
-
-            //         // right could go down to a single digit, otherwise insert
-            //         let rn = r.parse().unwrap();
-            //         if rn < 10 {
-            //             singles_new[rn as usize] += 1;
-            //         } else {
-            //             self.data.insert(i, rn);
-            //             // Advance because we inserted
-            //             i += 1;
-            //         }
-
-            //         // Did not remove, so advance
-            //         i += 1;
-            //     } else {
-            //         self.data[i] *= 2024;
-            //         // Did not remove, so advance
-            //         i += 1;
-            //     }
-            // }
-
             // Update the arrays
             self.data = new_data;
             self.singles = singles_new;
