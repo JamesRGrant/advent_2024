@@ -36,13 +36,13 @@ mod test {
     fn p2() {
         assert_eq!(Problem::new(&load_file("input/_test.txt")).p2(), ANSWERS[1]);
     }
-    #[test]
-    fn f1() {
-        assert_eq!(Problem::new(&load_file("input/.txt")).p1(), ANSWERS[0]);
-    }
+    // #[test]
+    // fn f1() {
+    //     assert_eq!(Problem::new(&load_file("input/.txt")).p1(), ANSWERS[2]);
+    // }
 
-    #[test]
-    fn f2() {
-        assert_eq!(Problem::new(&load_file("input/.txt")).p2(), ANSWERS[1]);
-    }
+    // #[test]
+    // fn f2() {
+    //     assert_eq!(Problem::new(&load_file("input/.txt")).p2(), ANSWERS[3]);
+    // }
 }
