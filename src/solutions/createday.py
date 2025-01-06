@@ -25,7 +25,7 @@ f.close()
 # Write out the code file for the day: dayXX.rs
 dest = "day" + f"{i:02}" + ".rs"
 newContent = content.replace("_test.txt", f"{i:02}_test.txt")
-newContent = content.replace("/.txt", f"/{i:02}.txt")
+newContent = newContent.replace("/.txt", f"/{i:02}.txt")
 f_day = open(dest, "w")
 f_day.write(newContent)
 f_day.close()
